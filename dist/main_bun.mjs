@@ -84,7 +84,8 @@ function openAiMessageToGeminiMessage(messages) {
   return result;
 }
 function genModel(req) {
-  const model = ModelMapping[req.model] ?? "gemini-1.0-pro-latest";
+  const model = ModelMapping[req.model] ?? req.model; // 使用用户请求的模型作为默认值
+  //const model = ModelMapping[req.model] ?? "gemini-1.0-pro-latest";
   let functions = req.tools?.filter((it) => it.type === "function")?.map((it) => it.function) ?? [];
   functions = functions.concat(req.functions ?? []);
   const responseMimeType = req.response_format?.type === "json_object" ? "application/json" : "text/plain";
