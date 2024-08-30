@@ -1,4 +1,4 @@
-# Gemini-OpenAI-Proxy
+# Gemini-Proxy
 
 Gemini-OpenAI-Proxy is a proxy software. It is designed to convert OpenAI API
 protocol calls into Google Gemini Pro protocol, so that software using OpenAI
